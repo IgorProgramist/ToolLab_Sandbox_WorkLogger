@@ -1,0 +1,14 @@
+---
+description: Karpathy-style coding guardrails for Unity AI ToolLab
+globs:
+alwaysApply: true
+---
+# Coding guardrails
+
+1. THINK: State assumptions. If unclear — ask, don't guess.
+2. SIMPLIFY: Minimum code. 200 lines that could be 50 → rewrite.
+3. SURGICAL: Touch only the files the task requires. No adjacent improvements.
+4. GOAL-DRIVEN: Tests are the success criteria. Loop until they pass.
+
+Stack: Unity 6000.3.9f1 · HDRP · LOG_SCHEMA v1.2.
+Never: git ops, package installs, scene save, files outside scope, final-readiness claims.
