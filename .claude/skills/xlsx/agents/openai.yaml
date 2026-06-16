@@ -1,0 +1,4 @@
+interface:
+  display_name: "xlsx"
+  short_description: "Use this skill any time a spreadsheet file is the primary input or output. This ..."
+  default_prompt: "Use $xlsx for this task."

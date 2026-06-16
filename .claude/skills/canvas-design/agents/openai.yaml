@@ -1,0 +1,4 @@
+interface:
+  display_name: "canvas-design"
+  short_description: "Create beautiful visual art in .png and .pdf documents using design philosophy. ..."
+  default_prompt: "Use $canvas-design for this task."

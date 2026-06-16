@@ -1,0 +1,4 @@
+interface:
+  display_name: "webapp-testing"
+  short_description: "Toolkit for interacting with and testing local web applications using Playwright..."
+  default_prompt: "Use $webapp-testing for this task."

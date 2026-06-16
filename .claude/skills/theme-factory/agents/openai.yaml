@@ -1,0 +1,4 @@
+interface:
+  display_name: "theme-factory"
+  short_description: "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs,..."
+  default_prompt: "Use $theme-factory for this task."

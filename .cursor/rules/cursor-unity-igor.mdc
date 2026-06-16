@@ -1,0 +1,81 @@
+---
+description: Igor's Unity project rules — Karpathy discipline + Unity conventions
+globs:
+  - "**/*.cs"
+  - "**/*.shader"
+  - "**/*.hlsl"
+  - "**/*.asmdef"
+alwaysApply: true
+---
+
+# Igor — Unity Coding Rules (Cursor)
+
+## 4 RULES (always active)
+
+1. **THINK** — State assumptions before any code. Unclear → ask, not guess.
+   Multiple interpretations → present all, don't pick silently.
+
+2. **SIMPLIFY** — Minimum code that solves the task.
+   No extra features, no speculative abstraction, no premature flexibility.
+   200 lines that could be 50 → rewrite. Ask: would a senior say this is overcomplicated?
+
+3. **SURGICAL** — Touch ONLY files the task requires.
+   No improving adjacent code, comments, or formatting.
+   No "while I'm here" changes. Every changed line must trace to the request.
+   Unrelated dead code: mention it, do not delete.
+
+4. **GOAL-DRIVEN** — Turn tasks into verifiable goals.
+   "Fix the bug" → "Write a test that reproduces it, then make it pass."
+   State a plan before coding. Loop until tests pass or report why blocked.
+
+---
+
+## UNITY CONVENTIONS
+
+- **UI system:** uGUI / Canvas / RectTransform only. NEVER UI Toolkit unless asked.
+- **Text:** TextMeshProUGUI for ALL UI text. NEVER Unity legacy Text component.
+- **TMP alpha animation:** use `.color.a` on TMP component, NOT CanvasGroup.alpha for text.
+- **Namespace:** UnityToolLab.* for ToolLab code.
+- **VALIDATE_FIRST:** all Unity API, component names, method signatures → check Unity Manual.
+  Do not rely on memory for Unity APIs.
+
+## C# CONVENTIONS
+
+- Explicit access modifiers always (`private`, `public`, `protected`).
+- `[SerializeField] private` preferred over `public` for Inspector fields.
+- No magic numbers — use named constants or `[SerializeField]` fields.
+- Null-check before any GetComponent. Never assume component exists.
+- Coroutines: always cache, always stop before restarting.
+- No anonymous lambdas in Update/FixedUpdate (allocation).
+
+---
+
+## HARD LOCKS (never without explicit approval)
+
+- No git commit / push / stage
+- No package installs or Packages/manifest.json edits
+- No scene save unless explicitly instructed
+- No files outside the task scope
+- No final-readiness or "all done, ship it" claims
+- No MCP calls unless explicitly enabled
+- No import of new asset packs
+- No deletion of any file without confirmation
+
+---
+
+## RESPONSE FORMAT FOR CODE TASKS
+
+```
+PLAN:
+  Step 1: ... → verify: ...
+  Step 2: ... → verify: ...
+
+CHANGES:
+  Modified: [file] — [what changed and why]
+
+SAFETY_CHECK:
+  ✅ No git ops  ✅ No pkg installs  ✅ No scope creep
+
+ONE_NEXT_ACTION:
+```
+

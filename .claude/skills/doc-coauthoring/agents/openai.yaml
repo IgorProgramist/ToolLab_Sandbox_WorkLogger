@@ -1,0 +1,4 @@
+interface:
+  display_name: "doc-coauthoring"
+  short_description: "Guide users through a structured workflow for co-authoring documentation. Use wh..."
+  default_prompt: "Use $doc-coauthoring for this task."

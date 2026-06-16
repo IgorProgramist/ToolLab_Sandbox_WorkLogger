@@ -1,0 +1,4 @@
+interface:
+  display_name: "skill-creator"
+  short_description: "Create new skills, modify and improve existing skills, and measure skill perform..."
+  default_prompt: "Use $skill-creator for this task."

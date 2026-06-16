@@ -1,0 +1,4 @@
+interface:
+  display_name: "pptx"
+  short_description: "Use this skill any time a .pptx file is involved in any way — as input, output, ..."
+  default_prompt: "Use $pptx for this task."

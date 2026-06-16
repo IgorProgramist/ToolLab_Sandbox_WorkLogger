@@ -1,0 +1,4 @@
+interface:
+  display_name: "brand-guidelines"
+  short_description: "Applies Anthropic's official brand colors and typography to any sort of artifact..."
+  default_prompt: "Use $brand-guidelines for this task."
