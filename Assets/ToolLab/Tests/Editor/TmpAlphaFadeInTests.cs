@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using NUnit.Framework;
 using TMPro;
@@ -9,10 +10,12 @@ namespace UnityToolLab.Tests.Editor
     public class TmpAlphaFadeInTests
     {
         private string _logFolder;
+        private List<GameObject> _createdObjects;
 
         [SetUp]
         public void SetUp()
         {
+            _createdObjects = new List<GameObject>();
             _logFolder = Path.Combine(Application.dataPath, "Logs");
             if (!Directory.Exists(_logFolder))
                 return;
@@ -24,6 +27,14 @@ namespace UnityToolLab.Tests.Editor
         [TearDown]
         public void TearDown()
         {
+            foreach (var go in _createdObjects)
+            {
+                if (go != null)
+                    Object.DestroyImmediate(go);
+            }
+
+            _createdObjects.Clear();
+
             if (!Directory.Exists(_logFolder))
                 return;
 
@@ -34,7 +45,7 @@ namespace UnityToolLab.Tests.Editor
         [Test]
         public void T1_ComponentCanBeCreated_WithTextMeshProUGUI()
         {
-            var go = new GameObject("TMP_Test");
+            var go = CreateGameObject("TMP_Test");
             var tmp = go.AddComponent<TextMeshProUGUI>();
             var fade = go.AddComponent<TmpAlphaFadeIn>();
 
@@ -82,7 +93,7 @@ namespace UnityToolLab.Tests.Editor
         [Test]
         public void T5_MissingTmpReference_HandledSafely()
         {
-            var go = new GameObject("NoTMP");
+            var go = CreateGameObject("NoTMP");
             var fade = go.AddComponent<TmpAlphaFadeIn>();
 
             Assert.IsFalse(fade.TrySetAlpha(0.5f));
@@ -120,9 +131,16 @@ namespace UnityToolLab.Tests.Editor
             StringAssert.Contains("\"tool_id\":\"TMP_001\"", content);
         }
 
-        private static GameObject CreateTmpGameObject(float alpha = 0.5f)
+        private GameObject CreateGameObject(string name)
         {
-            var go = new GameObject("TMP_AlphaTest");
+            var go = new GameObject(name);
+            _createdObjects.Add(go);
+            return go;
+        }
+
+        private GameObject CreateTmpGameObject(float alpha = 0.5f)
+        {
+            var go = CreateGameObject("TMP_AlphaTest");
             var tmp = go.AddComponent<TextMeshProUGUI>();
             var color = tmp.color;
             color.a = alpha;

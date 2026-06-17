@@ -55,14 +55,15 @@ namespace UnityToolLab.TMP
                 return;
             }
 
+            var clamped = Mathf.Clamp01(alpha);
             var color = tmp.color;
-            color.a = alpha;
+            color.a = clamped;
             tmp.color = color;
 
             ToolLabWorkLogger.Log(
                 ToolId,
                 action,
-                "Alpha set to " + alpha.ToString("F2") + " on " + tmp.name);
+                "Alpha set to " + clamped.ToString("F2") + " on " + tmp.name);
         }
 
         private TextMeshProUGUI ResolveTarget()
