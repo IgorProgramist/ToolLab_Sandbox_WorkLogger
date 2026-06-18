@@ -45,6 +45,39 @@ Do NOT touch any other files without explicit approval.
 
 ---
 
+## CURRENT ROUTE OVERRIDE — Registry Route (active 2026-06-18)
+
+**Supersedes the narrow FILES_ALLOWED above for registry/workflow tasks.**
+Igor approved this override after OpenCode returned FAIL due to stale-scope mismatch.
+See AI_WORKFLOW/DECISIONS.md D-003.
+
+### Approved scope for registry/workflow tasks
+```
+Assets/ToolLab/Registry/**     — ToolLab utility registry (MD + CSV)
+Assets/ToolLab/Docs/**         — ToolLab action plans and docs
+AI_WORKFLOW/**                 — Workflow coordination files
+CLAUDE.md                      — This file (scope updates)
+AGENTS.md                      — Agent routing rules
+.cursor/rules/**               — Cursor rule files
+```
+
+### Still DO_NOT_TOUCH (this prompt series)
+```
+Assets/ToolLab/Runtime/**      — Runtime code, including ToolLabWorkLogger.cs
+Assets/ToolLab/Tests/**        — Test files, including WorkLoggerTests.cs
+ProjectSettings/**
+Packages/**
+UserSettings/**
+.mcp.json
+Library/** / Temp/** / Logs/**
+```
+
+### TMP_001 lock
+TmpAlphaFadeIn.cs and TmpAlphaFadeInTests.cs are CLOSED_BY_OPERATOR.
+Do NOT reopen. Do NOT modify.
+
+---
+
 ## HARD LOCKS (never without Igor's explicit approval)
 - No git commit / push / stage
 - No package installs, no Packages/manifest.json edits

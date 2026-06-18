@@ -1,0 +1,153 @@
+# ToolLab Work Log — V4.3 Registry
+<!-- Auto-generated: 2026-06-18 | Schema: V4.3 | DO NOT HAND-EDIT rows below separator -->
+
+## Meta
+| Key | Value |
+|-----|-------|
+| Registry version | V4.3 |
+| Project | ToolLab_Sandbox_WorkLogger |
+| Unity | 6000.3.9f1 / HDRP |
+| Total planned utilities | 100 |
+| Last updated | 2026-06-18 |
+| Runtime files | **DO_NOT_TOUCH** |
+| Test files | **DO_NOT_TOUCH** |
+
+---
+
+## Status Legend
+| Code | Meaning |
+|------|---------|
+| PLANNED | Defined, not started |
+| IN_PROGRESS | Active development |
+| DONE | Merged, tests green |
+| CLOSED_BY_OPERATOR | Closed externally, non-blocking |
+| BLOCKED | Waiting on dependency |
+| CANCELLED | Removed from scope |
+
+---
+
+## Batch Index
+| Batch | Name | Tools |
+|-------|------|-------|
+| B01 | Core Logging | 001–010 |
+| B02 | TMP / Text | 011–020 |
+| B03 | Editor Utilities | 021–030 |
+| B04 | Scene Tools | 031–040 |
+| B05 | Asset Pipeline | 041–050 |
+| B06 | Shader / VFX | 051–060 |
+| B07 | UI Components | 061–070 |
+| B08 | Diagnostics | 071–080 |
+| B09 | Automation | 081–090 |
+| B10 | Integrations | 091–100 |
+
+---
+
+## Work Log
+
+<!-- COLUMNS: ID | name | batch | category | status | path | commit_sha | proof_ref | notes -->
+
+| ID | Name | Batch | Category | Status | Path | Commit SHA | Proof Ref | Notes |
+|----|------|-------|----------|--------|------|------------|-----------|-------|
+| UTL-001 | ToolLabWorkLogger | B01 | Core Logging | DONE | Assets/ToolLab/Runtime/Logging/ToolLabWorkLogger.cs | a540a21 | WorkLoggerTests.cs | Schema v1.2, 19 fields. **DO_NOT_TOUCH** |
+| UTL-002 | WorkLoggerTests | B01 | Core Logging | DONE | Assets/ToolLab/Tests/Editor/WorkLoggerTests.cs | a540a21 | — | T1–T7 gate tests. **DO_NOT_TOUCH** |
+| UTL-003 | LogRotationPolicy | B01 | Core Logging | PLANNED | Assets/ToolLab/Runtime/Logging/LogRotationPolicy.cs | — | — | Auto-rotate JSONL by date/size |
+| UTL-004 | LogQueryReader | B01 | Core Logging | PLANNED | Assets/ToolLab/Runtime/Logging/LogQueryReader.cs | — | — | Read/filter JSONL entries |
+| UTL-005 | SessionIdProvider | B01 | Core Logging | PLANNED | Assets/ToolLab/Runtime/Logging/SessionIdProvider.cs | — | — | Stable GUID per domain reload |
+| UTL-006 | RedactionGuardTests | B01 | Core Logging | PLANNED | Assets/ToolLab/Tests/Editor/RedactionGuardTests.cs | — | — | Unit tests for redaction throw |
+| UTL-007 | LogSchemaValidator | B01 | Core Logging | PLANNED | Assets/ToolLab/Runtime/Logging/LogSchemaValidator.cs | — | — | Validate all 19 fields at runtime |
+| UTL-008 | LogLevelFilter | B01 | Core Logging | PLANNED | Assets/ToolLab/Runtime/Logging/LogLevelFilter.cs | — | — | Filter by INFO/WARN/ERROR/GATE |
+| UTL-009 | LogExporterJson | B01 | Core Logging | PLANNED | Assets/ToolLab/Runtime/Logging/LogExporterJson.cs | — | — | Export JSONL to pretty JSON |
+| UTL-010 | LogExporterCsv | B01 | Core Logging | PLANNED | Assets/ToolLab/Runtime/Logging/LogExporterCsv.cs | — | — | Export JSONL to CSV |
+| UTL-011 | TmpAlphaFadeIn | B02 | TMP / Text | CLOSED_BY_OPERATOR | Assets/ToolLab/Runtime/TMP/TmpAlphaFadeIn.cs | e9272d8 | TmpAlphaFadeInTests.cs | TMP_001. Alpha handled. Non-blocking. |
+| UTL-012 | TmpAlphaFadeInTests | B02 | TMP / Text | CLOSED_BY_OPERATOR | Assets/ToolLab/Tests/Editor/TmpAlphaFadeInTests.cs | a540a21 | — | TMP_001 tests. Non-blocking. |
+| UTL-013 | TmpTypewriter | B02 | TMP / Text | PLANNED | Assets/ToolLab/Runtime/TMP/TmpTypewriter.cs | — | — | Typewriter reveal effect |
+| UTL-014 | TmpColorCycler | B02 | TMP / Text | PLANNED | Assets/ToolLab/Runtime/TMP/TmpColorCycler.cs | — | — | Cycle vertex colors on TMP |
+| UTL-015 | TmpRichTagStripper | B02 | TMP / Text | PLANNED | Assets/ToolLab/Runtime/TMP/TmpRichTagStripper.cs | — | — | Strip rich-text tags for logging |
+| UTL-016 | TmpWordWrapper | B02 | TMP / Text | PLANNED | Assets/ToolLab/Runtime/TMP/TmpWordWrapper.cs | — | — | Manual word-wrap utility |
+| UTL-017 | TmpFontSizer | B02 | TMP / Text | PLANNED | Assets/ToolLab/Runtime/TMP/TmpFontSizer.cs | — | — | Dynamic fit-to-rect font sizing |
+| UTL-018 | TmpLinkHandler | B02 | TMP / Text | PLANNED | Assets/ToolLab/Runtime/TMP/TmpLinkHandler.cs | — | — | Click handler for TMP hyperlinks |
+| UTL-019 | TmpSpriteAnimator | B02 | TMP / Text | PLANNED | Assets/ToolLab/Runtime/TMP/TmpSpriteAnimator.cs | — | — | Animate inline sprites in TMP |
+| UTL-020 | TmpLocalizationBridge | B02 | TMP / Text | PLANNED | Assets/ToolLab/Runtime/TMP/TmpLocalizationBridge.cs | — | — | Feed localized strings to TMP |
+| UTL-021 | EditorWindowBase | B03 | Editor Utilities | PLANNED | Assets/ToolLab/Editor/EditorWindowBase.cs | — | — | Base class for all UTL EditorWindows |
+| UTL-022 | AssetPathResolver | B03 | Editor Utilities | PLANNED | Assets/ToolLab/Editor/AssetPathResolver.cs | — | — | Resolve GUIDs ↔ paths |
+| UTL-023 | SelectionHistoryWindow | B03 | Editor Utilities | PLANNED | Assets/ToolLab/Editor/SelectionHistoryWindow.cs | — | — | Track object selection history |
+| UTL-024 | HierarchyHighlighter | B03 | Editor Utilities | PLANNED | Assets/ToolLab/Editor/HierarchyHighlighter.cs | — | — | Color-code hierarchy by tag/layer |
+| UTL-025 | ComponentFinder | B03 | Editor Utilities | PLANNED | Assets/ToolLab/Editor/ComponentFinder.cs | — | — | Find component across all prefabs |
+| UTL-026 | MissingScriptFinder | B03 | Editor Utilities | PLANNED | Assets/ToolLab/Editor/MissingScriptFinder.cs | — | — | Report missing MonoBehaviour refs |
+| UTL-027 | ScriptableObjectCreator | B03 | Editor Utilities | PLANNED | Assets/ToolLab/Editor/ScriptableObjectCreator.cs | — | — | Generic SO creation wizard |
+| UTL-028 | FolderStructureValidator | B03 | Editor Utilities | PLANNED | Assets/ToolLab/Editor/FolderStructureValidator.cs | — | — | Enforce project folder conventions |
+| UTL-029 | EditorPrefsManager | B03 | Editor Utilities | PLANNED | Assets/ToolLab/Editor/EditorPrefsManager.cs | — | — | Typed EditorPrefs wrapper |
+| UTL-030 | MenuItemBatch | B03 | Editor Utilities | PLANNED | Assets/ToolLab/Editor/MenuItemBatch.cs | — | — | Batch menu commands registry |
+| UTL-031 | SceneSwitcher | B04 | Scene Tools | PLANNED | Assets/ToolLab/Editor/SceneSwitcher.cs | — | — | Quick-switch between scenes |
+| UTL-032 | SceneBookmarks | B04 | Scene Tools | PLANNED | Assets/ToolLab/Editor/SceneBookmarks.cs | — | — | Save/restore camera bookmarks |
+| UTL-033 | ObjectPlacer | B04 | Scene Tools | PLANNED | Assets/ToolLab/Runtime/Scene/ObjectPlacer.cs | — | — | Raycast-based object placement |
+| UTL-034 | GridSnapper | B04 | Scene Tools | PLANNED | Assets/ToolLab/Runtime/Scene/GridSnapper.cs | — | — | Snap objects to configurable grid |
+| UTL-035 | SceneObjectCounter | B04 | Scene Tools | PLANNED | Assets/ToolLab/Editor/SceneObjectCounter.cs | — | — | Count objects by type/layer |
+| UTL-036 | LightingPresetManager | B04 | Scene Tools | PLANNED | Assets/ToolLab/Editor/LightingPresetManager.cs | — | — | Save/apply HDRP lighting presets |
+| UTL-037 | LODGroupValidator | B04 | Scene Tools | PLANNED | Assets/ToolLab/Editor/LODGroupValidator.cs | — | — | Validate LOD group completeness |
+| UTL-038 | ColliderVisualizer | B04 | Scene Tools | PLANNED | Assets/ToolLab/Runtime/Scene/ColliderVisualizer.cs | — | — | Draw colliders in scene view |
+| UTL-039 | SceneTagManager | B04 | Scene Tools | PLANNED | Assets/ToolLab/Editor/SceneTagManager.cs | — | — | Batch re-tag scene objects |
+| UTL-040 | PrefabDiffViewer | B04 | Scene Tools | PLANNED | Assets/ToolLab/Editor/PrefabDiffViewer.cs | — | — | Show prefab vs scene overrides |
+| UTL-041 | TextureImportPreset | B05 | Asset Pipeline | PLANNED | Assets/ToolLab/Editor/TextureImportPreset.cs | — | — | Auto-apply texture import settings |
+| UTL-042 | AudioImportPreset | B05 | Asset Pipeline | PLANNED | Assets/ToolLab/Editor/AudioImportPreset.cs | — | — | Auto-apply audio import settings |
+| UTL-043 | ModelImportValidator | B05 | Asset Pipeline | PLANNED | Assets/ToolLab/Editor/ModelImportValidator.cs | — | — | Validate FBX on import |
+| UTL-044 | AssetSizeAuditor | B05 | Asset Pipeline | PLANNED | Assets/ToolLab/Editor/AssetSizeAuditor.cs | — | — | Report assets over budget |
+| UTL-045 | DuplicateAssetFinder | B05 | Asset Pipeline | PLANNED | Assets/ToolLab/Editor/DuplicateAssetFinder.cs | — | — | Find duplicate assets by hash |
+| UTL-046 | AssetBundleTagger | B05 | Asset Pipeline | PLANNED | Assets/ToolLab/Editor/AssetBundleTagger.cs | — | — | Batch assign AssetBundle labels |
+| UTL-047 | SpriteAtlasPacker | B05 | Asset Pipeline | PLANNED | Assets/ToolLab/Editor/SpriteAtlasPacker.cs | — | — | Trigger atlas re-pack via script |
+| UTL-048 | ShaderVariantCollector | B05 | Asset Pipeline | PLANNED | Assets/ToolLab/Editor/ShaderVariantCollector.cs | — | — | Collect shader variants to SVC |
+| UTL-049 | ReadableAssetExporter | B05 | Asset Pipeline | PLANNED | Assets/ToolLab/Editor/ReadableAssetExporter.cs | — | — | Export assets to readable format |
+| UTL-050 | AssetDependencyGraph | B05 | Asset Pipeline | PLANNED | Assets/ToolLab/Editor/AssetDependencyGraph.cs | — | — | Visualise asset dependency tree |
+| UTL-051 | ShaderPropertyInspector | B06 | Shader / VFX | PLANNED | Assets/ToolLab/Editor/ShaderPropertyInspector.cs | — | — | List all shader properties |
+| UTL-052 | HdrpMaterialSwitcher | B06 | Shader / VFX | PLANNED | Assets/ToolLab/Editor/HdrpMaterialSwitcher.cs | — | — | Batch-swap to HDRP materials |
+| UTL-053 | VfxGraphAuditor | B06 | Shader / VFX | PLANNED | Assets/ToolLab/Editor/VfxGraphAuditor.cs | — | — | Audit VFX Graph performance |
+| UTL-054 | ParticleSystemBudget | B06 | Shader / VFX | PLANNED | Assets/ToolLab/Editor/ParticleSystemBudget.cs | — | — | Count active particles at runtime |
+| UTL-055 | ShaderKeywordStrip | B06 | Shader / VFX | PLANNED | Assets/ToolLab/Editor/ShaderKeywordStrip.cs | — | — | Strip unused shader keywords |
+| UTL-056 | UvTilingDebugger | B06 | Shader / VFX | PLANNED | Assets/ToolLab/Runtime/Shader/UvTilingDebugger.cs | — | — | Visualise UV tiling in viewport |
+| UTL-057 | NormalMapValidator | B06 | Shader / VFX | PLANNED | Assets/ToolLab/Editor/NormalMapValidator.cs | — | — | Validate normal map convention |
+| UTL-058 | MaterialPropertySetter | B06 | Shader / VFX | PLANNED | Assets/ToolLab/Runtime/Shader/MaterialPropertySetter.cs | — | — | Set MaterialPropertyBlock at runtime |
+| UTL-059 | GpuInstancerHelper | B06 | Shader / VFX | PLANNED | Assets/ToolLab/Runtime/Shader/GpuInstancerHelper.cs | — | — | Batch instanced draw calls |
+| UTL-060 | RenderFeatureToggler | B06 | Shader / VFX | PLANNED | Assets/ToolLab/Runtime/Shader/RenderFeatureToggler.cs | — | — | Toggle HDRP render features at runtime |
+| UTL-061 | UiPanelTransitioner | B07 | UI Components | PLANNED | Assets/ToolLab/Runtime/UI/UiPanelTransitioner.cs | — | — | Fade/slide panel transitions |
+| UTL-062 | UiTooltipSystem | B07 | UI Components | PLANNED | Assets/ToolLab/Runtime/UI/UiTooltipSystem.cs | — | — | Hover tooltips for uGUI elements |
+| UTL-063 | UiSafeAreaAdjuster | B07 | UI Components | PLANNED | Assets/ToolLab/Runtime/UI/UiSafeAreaAdjuster.cs | — | — | Adjust canvas for device safe area |
+| UTL-064 | UiScrollSnap | B07 | UI Components | PLANNED | Assets/ToolLab/Runtime/UI/UiScrollSnap.cs | — | — | Snap ScrollRect to page increments |
+| UTL-065 | UiTabGroup | B07 | UI Components | PLANNED | Assets/ToolLab/Runtime/UI/UiTabGroup.cs | — | — | Tab strip with content panels |
+| UTL-066 | UiProgressRing | B07 | UI Components | PLANNED | Assets/ToolLab/Runtime/UI/UiProgressRing.cs | — | — | Circular progress indicator |
+| UTL-067 | UiDragHandle | B07 | UI Components | PLANNED | Assets/ToolLab/Runtime/UI/UiDragHandle.cs | — | — | Draggable panel handle |
+| UTL-068 | UiVirtualList | B07 | UI Components | PLANNED | Assets/ToolLab/Runtime/UI/UiVirtualList.cs | — | — | Virtualised scroll list |
+| UTL-069 | UiPopupManager | B07 | UI Components | PLANNED | Assets/ToolLab/Runtime/UI/UiPopupManager.cs | — | — | Stack-based modal popup manager |
+| UTL-070 | UiAnimatedCounter | B07 | UI Components | PLANNED | Assets/ToolLab/Runtime/UI/UiAnimatedCounter.cs | — | — | Animate numeric values in TMP |
+| UTL-071 | FrameRateMonitor | B08 | Diagnostics | PLANNED | Assets/ToolLab/Runtime/Diagnostics/FrameRateMonitor.cs | — | — | FPS sampling + JSONL output |
+| UTL-072 | MemoryUsageReporter | B08 | Diagnostics | PLANNED | Assets/ToolLab/Runtime/Diagnostics/MemoryUsageReporter.cs | — | — | GC + native memory snapshot |
+| UTL-073 | DrawCallCounter | B08 | Diagnostics | PLANNED | Assets/ToolLab/Runtime/Diagnostics/DrawCallCounter.cs | — | — | Per-frame draw-call reporting |
+| UTL-074 | AssetLoadProfiler | B08 | Diagnostics | PLANNED | Assets/ToolLab/Runtime/Diagnostics/AssetLoadProfiler.cs | — | — | Time async asset loads |
+| UTL-075 | PhysicsStepMonitor | B08 | Diagnostics | PLANNED | Assets/ToolLab/Runtime/Diagnostics/PhysicsStepMonitor.cs | — | — | Fixed-update timing histogram |
+| UTL-076 | SceneLoadTimer | B08 | Diagnostics | PLANNED | Assets/ToolLab/Runtime/Diagnostics/SceneLoadTimer.cs | — | — | Time additive/single scene loads |
+| UTL-077 | RenderPassProfiler | B08 | Diagnostics | PLANNED | Assets/ToolLab/Runtime/Diagnostics/RenderPassProfiler.cs | — | — | Profile HDRP render passes |
+| UTL-078 | NetworkLatencyProbe | B08 | Diagnostics | PLANNED | Assets/ToolLab/Runtime/Diagnostics/NetworkLatencyProbe.cs | — | — | Measure round-trip latency |
+| UTL-079 | DiagnosticsHud | B08 | Diagnostics | PLANNED | Assets/ToolLab/Runtime/Diagnostics/DiagnosticsHud.cs | — | — | On-screen diagnostics overlay |
+| UTL-080 | CrashReportWriter | B08 | Diagnostics | PLANNED | Assets/ToolLab/Runtime/Diagnostics/CrashReportWriter.cs | — | — | Write structured crash JSONL |
+| UTL-081 | BuildAutomator | B09 | Automation | PLANNED | Assets/ToolLab/Editor/BuildAutomator.cs | — | — | CI-friendly headless build |
+| UTL-082 | TestRunner | B09 | Automation | PLANNED | Assets/ToolLab/Editor/TestRunner.cs | — | — | Trigger EditMode/PlayMode tests |
+| UTL-083 | ScreenshotCapture | B09 | Automation | PLANNED | Assets/ToolLab/Runtime/Automation/ScreenshotCapture.cs | — | — | Capture + name screenshots |
+| UTL-084 | GitStatusReader | B09 | Automation | PLANNED | Assets/ToolLab/Editor/GitStatusReader.cs | — | — | Read git status from Editor |
+| UTL-085 | ChangelogGenerator | B09 | Automation | PLANNED | Assets/ToolLab/Editor/ChangelogGenerator.cs | — | — | Generate CHANGELOG from git log |
+| UTL-086 | ProjectValidator | B09 | Automation | PLANNED | Assets/ToolLab/Editor/ProjectValidator.cs | — | — | Pre-build project validation |
+| UTL-087 | PackageExporter | B09 | Automation | PLANNED | Assets/ToolLab/Editor/PackageExporter.cs | — | — | Export .unitypackage via script |
+| UTL-088 | SceneAutoLoader | B09 | Automation | PLANNED | Assets/ToolLab/Editor/SceneAutoLoader.cs | — | — | Load boot scene on Play |
+| UTL-089 | PlayerPrefsCleaner | B09 | Automation | PLANNED | Assets/ToolLab/Editor/PlayerPrefsCleaner.cs | — | — | Menu command to wipe PlayerPrefs |
+| UTL-090 | AssetPostprocessBatch | B09 | Automation | PLANNED | Assets/ToolLab/Editor/AssetPostprocessBatch.cs | — | — | Batch re-run AssetPostprocessors |
+| UTL-091 | NotionLogBridge | B10 | Integrations | PLANNED | Assets/ToolLab/Runtime/Integrations/NotionLogBridge.cs | — | — | Push JSONL entries to Notion |
+| UTL-092 | SlackNotifier | B10 | Integrations | PLANNED | Assets/ToolLab/Runtime/Integrations/SlackNotifier.cs | — | — | Post build/gate results to Slack |
+| UTL-093 | GithubIssueCreator | B10 | Integrations | PLANNED | Assets/ToolLab/Runtime/Integrations/GithubIssueCreator.cs | — | — | Open GitHub issue from JSONL entry |
+| UTL-094 | JiraTicketBridge | B10 | Integrations | PLANNED | Assets/ToolLab/Runtime/Integrations/JiraTicketBridge.cs | — | — | Create Jira ticket from log |
+| UTL-095 | SupabaseLogSink | B10 | Integrations | PLANNED | Assets/ToolLab/Runtime/Integrations/SupabaseLogSink.cs | — | — | Stream JSONL to Supabase table |
+| UTL-096 | FigmaAssetSync | B10 | Integrations | PLANNED | Assets/ToolLab/Runtime/Integrations/FigmaAssetSync.cs | — | — | Pull Figma assets into project |
+| UTL-097 | VercelDeployTrigger | B10 | Integrations | PLANNED | Assets/ToolLab/Runtime/Integrations/VercelDeployTrigger.cs | — | — | Trigger Vercel deploy on gate PASS |
+| UTL-098 | ZapierWebhookSink | B10 | Integrations | PLANNED | Assets/ToolLab/Runtime/Integrations/ZapierWebhookSink.cs | — | — | POST log entries to Zapier webhook |
+| UTL-099 | CalendarGateLogger | B10 | Integrations | PLANNED | Assets/ToolLab/Runtime/Integrations/CalendarGateLogger.cs | — | — | Log gate events to calendar |
+| UTL-100 | RegistryIndexer | B10 | Integrations | PLANNED | Assets/ToolLab/Registry/RegistryIndexer.cs | — | — | Auto-index all UTL-* entries |
+
+---
+*Registry generated 2026-06-18. Total entries: 100.*

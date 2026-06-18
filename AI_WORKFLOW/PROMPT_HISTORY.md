@@ -1,0 +1,30 @@
+# Prompt History
+<!-- ToolLab_Sandbox_WorkLogger | Append only — newest at top -->
+
+---
+
+## P-002 — AI_WORKFLOW bootstrap (2026-06-18)
+**Prompt ID:** PROMPT_STANDARD__CURSOR__TOOLLAB_WORKFLOW_V4_3
+**Agent:** Claude Code (Sonnet 4.6)
+**Outcome:** DONE
+**Files created:** AI_WORKFLOW/ (20 files), AGENTS.md
+**Files changed:** CLAUDE.md
+**Key decisions activated:** D-003 (registry route override)
+**TMP_001:** Not reopened.
+
+---
+
+## P-001 — ToolLab V4.3 Registry creation (2026-06-18)
+**Prompt ID:** PROMPT_STANDARD__CURSOR__TOOLLAB_REGISTRY_V4_3_FINAL
+**Agent:** Claude Code (Sonnet 4.6)
+**Outcome:** DONE
+**Files created:**
+- Assets/ToolLab/Registry/TOOLLAB_WORK_LOG.md
+- Assets/ToolLab/Registry/TOOLLAB_WORK_LOG.csv
+- Assets/ToolLab/Docs/TOOLLAB_ACTION_PLAN.md
+**Key result:** 100 utilities registered (UTL-001 to UTL-100), first 5 batches listed.
+**TMP_001:** Marked CLOSED_BY_OPERATOR. Not reopened.
+
+---
+
+<!-- Format: ## P-NNN — title (YYYY-MM-DD) -->
