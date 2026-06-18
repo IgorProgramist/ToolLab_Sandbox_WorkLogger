@@ -24,7 +24,9 @@
 
 ## In Progress
 
-None. Awaiting next batch assignment.
+| Item | Status | Notes |
+|------|--------|-------|
+| TOOLLAB_QA_PLAN.md | DRAFT | WorkLogger registry QA checklist, awaiting execution |
 
 ---
 
@@ -43,7 +45,7 @@ None. Awaiting next batch assignment.
 Assets/ToolLab/Registry/TOOLLAB_WORK_LOG.md
 Assets/ToolLab/Registry/TOOLLAB_WORK_LOG.csv
 Assets/ToolLab/Docs/TOOLLAB_ACTION_PLAN.md
-AI_WORKFLOW/**  (all files in this folder)
+AI_WORKFLOW/**  (all files in this folder, including REPORTS/TOOLLAB_QA_PLAN.md)
 CLAUDE.md  (updated)
 AGENTS.md  (new)
 ```

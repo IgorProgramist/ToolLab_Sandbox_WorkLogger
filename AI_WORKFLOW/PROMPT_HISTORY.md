@@ -3,6 +3,22 @@
 
 ---
 
+## P-003 — CONVEYOR MODE: first safe QA route (2026-06-18)
+**Prompt ID:** CONVEYOR_MODE__TOOLLAB_FIRST_SAFE_ROUTE_V1
+**Agent:** Claude Code (Sonnet 4.6)
+**Outcome:** DONE
+**Files created:**
+- AI_WORKFLOW/REPORTS/TOOLLAB_QA_PLAN.md
+**Files changed:**
+- AI_WORKFLOW/WORK_LOG.md (entry 3 added)
+- AI_WORKFLOW/CURRENT_STATE.md (In Progress + pending list updated)
+- AI_WORKFLOW/PROMPT_HISTORY.md (this entry)
+**Key result:** Candidate A selected (WorkLogger Registry QA Checklist). QA plan drafted with 5 checklist sections covering registry row, schema fields, RedactionGuard, output format, and test gate coverage.
+**TMP_001:** Not reopened.
+**Runtime/Tests:** Not touched.
+
+---
+
 ## P-002 — AI_WORKFLOW bootstrap (2026-06-18)
 **Prompt ID:** PROMPT_STANDARD__CURSOR__TOOLLAB_WORKFLOW_V4_3
 **Agent:** Claude Code (Sonnet 4.6)
